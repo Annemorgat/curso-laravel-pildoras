@@ -9,7 +9,7 @@ return new class extends Migration
     private string $upSqlFilePath;
     private string $downSqlFilePath;
 
-    const FOLDER = "7_create_calificaciones_table";
+    const FOLDER = "1_create_productos_table";
 
     public function __construct()
     {

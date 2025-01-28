@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso laravel</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
-    @yield('cabecera')
-        <h1>Pruebas tablas</h1>
-    @yield('content')
-    @yield('pie')
-        <p>Pildoras informaticas</p>
+    <div class="cabecera">
+        @yield(section: 'cabecera')
+    </div>
+    <div class="content">
+        @yield('content')
+    </div>
+    <div class="pie">
+        @yield('pie')
+    </div>
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
