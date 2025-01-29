@@ -10,6 +10,7 @@
                 <th>Nombre del producto</th>
                 <th>Sección</th>
                 <th>País de origen</th>
+                <th>Imagen</th>
             </thead>
             @foreach ($productos as $producto)
                 <tr>
@@ -23,6 +24,9 @@
                     </td>
                     <td>
                         {{$producto->pais_origen}}
+                    </td>
+                    <td>
+                        <img src="/images/{{ $producto->image_url }}" width="20px" height="20px">
                     </td>
                 </tr>
             @endforeach

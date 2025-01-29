@@ -46,14 +46,6 @@
             @method('DELETE')
             <button type="submit">Eliminar</button>
         </form>
-
-        @if ($errors->any())
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
     @endif
 @endsection
 @section('pie')

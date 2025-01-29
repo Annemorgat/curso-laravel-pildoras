@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
-use App\Http\Requests\CreateProductsRequest;
 
 class ProductoController extends Controller
 {
@@ -28,13 +27,23 @@ class ProductoController extends Controller
     /**
      * Insertar un producto en BBDD
      */
-    public function store(CreateProductsRequest $request)
+    public function store(Request $request)
     {
-        $producto = new Producto();
+       /*$producto = new Producto();
         $producto->nombre_producto = $request->nombre_producto;
         $producto->seccion = $request->seccion;
         $producto->pais_origen = $request->pais_origen;
-        $producto->save();
+        $producto->save();*/
+
+        $entrada = $request->all();
+
+        if($archivo = $request->file('file')) {
+            $nombre = $archivo->getClientOriginalName();
+            $archivo->move('images', $nombre);
+            $entrada['image_url']= $nombre;
+        }
+
+        Producto::create($entrada);
     }
 
     /**

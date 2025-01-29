@@ -4,8 +4,9 @@
     <h1>Insertar productos</h1>
 @endsection
 @section('content')
-    <form method="POST" action="{{ route('insertProduct') }}">
+    <form method="POST" action="{{ route('insertProduct') }}" enctype="multipart/form-data">
         @csrf
+        <input type="file" name="file" value="Examinar">
         <table>
             <tr>
                 <td>
